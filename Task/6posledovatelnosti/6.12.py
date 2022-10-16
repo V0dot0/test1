@@ -1,6 +1,6 @@
-#lst = input()
+lst = input()
 lst5 = 'h'
-lst = 'ilumahABRIKOShamHamhamABRICOShtata'
+#lst = 'ilumahABRIKOShamHamhamABRICOShtata'
 lst1 = list(lst)
 firstPart = lst[lst1.index("h")+1: -1]
 print(firstPart)
