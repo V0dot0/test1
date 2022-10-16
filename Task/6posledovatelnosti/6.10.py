@@ -1,8 +1,7 @@
-lst = input()
+#lst = input()
+lst = 'ILYAhahahTATATA'
 lst1 = list(lst)
-lst2 = lst1[0: lst1.index("h")]
-lst1.reverse()
-lst3 = lst1[0: lst1.index("h")]
-lst3.reverse()
-lst2.append("".join(map(str, lst3)))
-print("".join(map(str, lst2)))
+lastPart = lst[::-1][0: lst1.index("h")]
+lastPart = lastPart[::-1]
+firstPart = lst[0: lst1.index("h")]
+print (firstPart+lastPart)
