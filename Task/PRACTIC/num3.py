@@ -7,7 +7,7 @@ c = int(random.choice(a))
 lstWord = list(lst[c])
 for i in lstWord:
     lstHid.append('\u25A0')
-print ("DEBUG",lstWord)
+print ("DEBUG !!!!",lstWord,"DEBUG !!!!")
 life = 5
 while life > 0 :
     print (lstHid, "life = ",life)
@@ -19,8 +19,9 @@ while life > 0 :
             life += 1
         k += 1
     life -= 1
-
+    if str(inpud) == str(lst[c]):
+        print("ПОБЕДА все слово")
+        break
     if '\u25A0' not in lstHid:
-        life = -1
-        print("ПОБЕДА")
+        print("ПОБЕДА не осталось неизвестных")
         break
