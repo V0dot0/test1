@@ -1,11 +1,7 @@
 import random
 
-def cantinue():
-    print("a")
 doReset = 0
 lst = ["книга","месяц","ручка","шарик","олень","носок"]
-while doReset == 0:
-    print("a")
 lstHid = []
 a = []
 for i in range(0,len(lst)):
