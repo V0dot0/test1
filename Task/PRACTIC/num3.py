@@ -1,8 +1,15 @@
 import random
 
+def cantinue():
+    print("a")
+doReset = 0
 lst = ["книга","месяц","ручка","шарик","олень","носок"]
+while doReset == 0:
+    print("a")
 lstHid = []
-a = [0, 1, 2, 3, 4, 5]
+a = []
+for i in range(0,len(lst)):
+    a.append(i)
 c = int(random.choice(a))
 lstWord = list(lst[c])
 for i in lstWord:
@@ -21,6 +28,8 @@ while life > 0 :
     life -= 1
     if str(inpud) == str(lst[c]):
         print("ПОБЕДА все слово")
+        lst.pop(c)
+        print(lst)
         break
     if '\u25A0' not in lstHid:
         print("ПОБЕДА не осталось неизвестных")
