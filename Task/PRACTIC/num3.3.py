@@ -2,6 +2,14 @@ import random
 
 doReset = 0
 lst = ["книга","месяц","ручка","шарик","олень","носок"]
+print("Выберите уровень сложности")
+live = int(input("3-легко (7 жизней), 2 - средне (5 жизней), 1 - сложно (1 жизнь). Любое другое число даст такое же количество жизней. Ваш ввод: "))
+if live == 1:
+    live = 7
+elif live == 2:
+    live = 5
+elif live == 3:
+    live = 3
 while len(lst) != 0:
     print("\nОсталось слов \n", len(lst))
     lstHid = []
@@ -13,7 +21,7 @@ while len(lst) != 0:
     for i in lstWord:
         lstHid.append('\u25A0')
     print("DEBUG !!!!", lstWord, "DEBUG !!!!")
-    life = 5
+    life = live
     while life > 0:
         print(lstHid, "life = ", life)
         inpud = input("Назовите букву или все слово: ")
