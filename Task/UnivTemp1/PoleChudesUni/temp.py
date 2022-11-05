@@ -8,7 +8,7 @@
 
 a = int(input())
 
-new_text = open("Record.txt", mode='r+')
+new_text = open("../../PRACTIC/number_3/Record.txt", mode='r+')
 
 new_text.seek(0)
 found = int(new_text.read())
