@@ -5,13 +5,23 @@
 #text.close()
 
 
+
 a = int(input())
-b = 3
+
 new_text = open("Record.txt", mode='r+')
-if a>b :
-    b = a
+
 new_text.seek(0)
-print(new_text.read())
+found = int(new_text.read())
+print("found num ", found)
+if a > found:
+    found = a
+
+
 new_text.seek(0)
-new_text.write(str(b))
-print(new_text.read() + 2)
+new_text.write(str(found))
+
+#debug
+new_text.seek(0)
+fin = int(new_text.read())
+print("final ", fin)
+
