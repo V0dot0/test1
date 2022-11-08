@@ -1,1 +1,6 @@
-('amount', 4, '\n', 'ab ba cd md')
+4
+============
+ab
+ba
+cd
+md
