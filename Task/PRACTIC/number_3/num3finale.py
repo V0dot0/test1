@@ -1,18 +1,5 @@
-def get_words():
-    opened_file = open('Words.txt')
-    word_list = opened_file.read().splitlines()
-    word_list = [i.lower() for i in word_list]
-    return word_list
+import Task.PRACTIC.number_3.makeRecord as rec
 
-def record(currentRecord):
-    new_text = open("Record.txt", mode='r+')
-    found = int(new_text.read())
-    if currentRecord > found:
-        found = currentRecord
-
-    new_text.seek(0)
-    new_text.write(str(found))
-    return("текущий рекорд ",currentRecord, "максимальный рекорд ", found)
 
 import random
 
@@ -20,11 +7,12 @@ print("Слова взяты из файла Words.txt")
 thisrecord = 0
 currentRecord = 0
 lst = []
-lst = get_words()
+lst = rec.get_words()
 print("lst= ",lst)
 
 
-print(record(currentRecord))
+
+print(rec.record(currentRecord))
 print("Выберите уровень сложности")
 live = int(input("3-легко (7 ❤), 2 - средне (5 ❤), 1 - сложно (1 ❤). Любое другое число даст равное вводу ❤. Ваш ввод: "))
 if live == 1:
@@ -59,13 +47,13 @@ while len(lst) != 0:
         if str(inpud) == str(lst[c]):
             print("\n⭐⭐⭐ ПОБЕДА!! Все сразу угадали ⭐⭐⭐")
             currentRecord += 1
-            print(record(currentRecord),"\n")
+            print(rec.record(currentRecord),"\n")
             lst.pop(c)
             break
         if '\u25A0' not in lstHid:
             print("\n ⭐⭐⭐ ПОБЕДА!! Угадали. Не осталось неизвестных ⭐⭐⭐")
             currentRecord += 1
-            print(record(currentRecord),"\n")
+            print(rec.record(currentRecord),"\n")
             lst.pop(c)
             break
     g = input("Напишите что угодно для продолжения, или напишите 'нет' для остановки ")
