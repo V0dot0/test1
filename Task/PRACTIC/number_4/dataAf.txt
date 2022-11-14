@@ -1,7 +1,6 @@
-# File content 'data.txt'
-Total unique words: 4
-=========================
 a
-beta
+be
+bet
+l
 text
 vid
