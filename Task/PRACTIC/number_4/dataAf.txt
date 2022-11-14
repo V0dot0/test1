@@ -1,6 +1,7 @@
-4
-============
-ab
-ba
-cd
-md
+# File content 'data.txt'
+Total unique words: 4
+=========================
+a
+beta
+text
+vid
