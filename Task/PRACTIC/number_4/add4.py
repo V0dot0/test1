@@ -10,7 +10,6 @@ def save_file(returned_file, requested_file):
     words = content
     words = ' '.join(words)
     words = words.replace(" ", "\n")
-    text_to_write = count, words
     returned_file = open(returned_file, mode='w+')
     returned_file.write(str("# File content "))
     returned_file.write(str(returned_file.name))

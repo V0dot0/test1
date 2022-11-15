@@ -1,6 +1,7 @@
+# File content dataAf.txt
+Total unique words: 4
+===========
 a
-be
-bet
-l
+beta
 text
 vid
