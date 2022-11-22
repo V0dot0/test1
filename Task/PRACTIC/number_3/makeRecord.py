@@ -1,5 +1,11 @@
-def record(currentRecord):
-    new_text = open("Record.txt", mode='r+')
+def record(currentRecord: int):
+    '''
+    Получает текущий рекорд; считывает файл, где хранится максимальный рекорд; если текущий рекорд больше, то
+    перезаписывает максимальный рекорд в файле Record.txt
+    :param currentRecord: текущий рекорд
+    :return: текущий рекорд и максимальный рекорд из файла Record.txt
+    '''
+    new_text: TextIOWrapper = open("Record.txt", mode='r+')
     found = int(new_text.read())
     if currentRecord > found:
         found = currentRecord
@@ -9,6 +15,10 @@ def record(currentRecord):
     return("текущий рекорд ",currentRecord, "максимальный рекорд ", found)
 
 def get_words():
+    '''
+    Открывает файл, и возвращает его в виде списка слов в файле
+    :return: список слов
+    '''
     opened_file = open('Words.txt')
     word_list = opened_file.read().splitlines()
     word_list = [i.lower() for i in word_list]

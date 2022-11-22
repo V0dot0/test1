@@ -1,5 +1,6 @@
 import File_conversion
 
+# Полу
 requested_file = str(input("Enter the name of the file to read and return data: "))
 
 if File_conversion.read_file(requested_file) == "ErrorFileNotFound.txt":
@@ -18,6 +19,8 @@ else:
     except:
         print("Неизвестная ошибка")
     finally:
-       print("===========")
+        print("===========")
 
     returned_file = File_conversion.read_file(requested_file)
+
+#   data.txt   dataNull.txt    broken.txt    txt.txt
