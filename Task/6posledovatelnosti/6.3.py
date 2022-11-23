@@ -1,8 +1,6 @@
 lst = [int(s) for s in input().split()]
-lst2 = lst
-i = 2
-lst[0], lst[1] = lst[1], lst[0]
+i = 1
 while i < len(lst):
-    lst[i], lst[i+1] = lst[i+1], lst[i]
+    lst[i - 1], lst[i] = lst[i], lst[i - 1]
     i += 2
-print (lst)
+print(str(lst).replace("[", "").replace("]", "").replace(",", ""))

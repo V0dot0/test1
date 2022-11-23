@@ -5,4 +5,4 @@ for i in range(0, len(lst)):
     if lst[i] == min(lst) :
         mini = i
 lst[mini], lst[mai] = lst[mai], lst[mini]
-print(lst)
+print (str(lst).replace("[","").replace("]","").replace(",",""))

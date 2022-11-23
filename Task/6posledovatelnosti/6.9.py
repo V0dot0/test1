@@ -1,16 +1,10 @@
+import math
 
-#lst = input()
-lst = 'Abrakadabra'
-l = len(lst) + 1
-part_1 = lst[0:l // 2]
-part_2 = lst[l // 2:]
+# Abrakadabra
 
-if (len(lst)/2) % 2 != 0 :
-    k = round(len(lst)/2)
-    b = lst[k]
-    print(lst)
-    print(part_2  + part_1,"Как в примере")
-    print(b+part_2+part_1,"При нечетном значении символ по середине добавляется к первой строке ")
-else:
-    print(lst)
-    print (part_2+part_1)
+lst = input()
+lst1 = list(lst)
+k = float(len(lst1)) / 2
+max = math.ceil(k)
+lst2 = lst1[max: len(lst1)] + lst1[0: max]
+print(str(lst2).replace("[", "").replace("]", "").replace(",", "").replace("'", "").replace(" ", ""))

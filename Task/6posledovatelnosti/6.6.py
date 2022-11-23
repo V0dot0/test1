@@ -5,4 +5,5 @@ for i in range(0, len(lst1)):
     for j in range(0, len(lst2)):
         if lst1[i] == lst2[j]:
             lst3.append(lst2[j])
-print (lst3)
+lst3.sort()
+print (str(lst3).replace("[","").replace("]","").replace(",",""))
