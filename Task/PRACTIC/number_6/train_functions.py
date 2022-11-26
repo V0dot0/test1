@@ -1,4 +1,9 @@
 def readable(requested_file):
+    '''
+    Считывает и удаляет лишний текст, оставляя только первую строку
+    :param requested_file: название файлп
+    :return: отформатировынный список
+    '''
     content = open(requested_file, encoding='utf-8')
     returned_file = content.read()
     returned_file = returned_file.splitlines()
@@ -7,6 +12,13 @@ def readable(requested_file):
     return returned_file
 
 def transfer_save(requested_file, save_location):
+    '''
+    Берет отформатированный список, проходится по нему и отбирает важные данные, занося их постепенно в новый текстовый
+    файл, который выбран пользователем.
+    :param requested_file: отформатированный список с данными (из первой функции)
+    :param save_location: название файла, в которого сохранится текст
+    :return: текстовое уведомление о сохранении
+    '''
     c = 0
     temp = []
     txtfile = open(save_location, mode='w+', encoding='utf-8')

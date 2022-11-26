@@ -1,9 +1,22 @@
 def read_file(requested_file):
+    '''
+    Функция принимает название файла; открывает и считывает этот файл; форматирует данные файла в список и возваращает
+    его
+    :param requested_file: название файла (из которого мы возьмем данные)
+    :return: Список слов (находящихся в файле)
+    '''
     content = open(requested_file, "r+")
     returned_file = list(set(content.read().splitlines()))
     return returned_file
 
 def save_file(returned_file, requested_file):
+    '''
+    Функция принимае название файла из которого мы возьмем данные и название файла в который запишем данные; сортирует
+    полученный список; форматирует и записывает данные в файл, который и возвращает нам.
+    :param returned_file: Название файла (в который мы запишем данные)
+    :param requested_file: Название файла (из которого мы возьмем данные)
+    :return: файл (с записанным в него результатом)
+    '''
     content = read_file(requested_file)
     content.sort()
     count = len(content)
