@@ -1,7 +1,5 @@
 import fin_functions as fun
 
-#print(fun.books_cvs_extract())
-
 new_list = fun.get_name("Python")
 fun.printlist(new_list)
 
