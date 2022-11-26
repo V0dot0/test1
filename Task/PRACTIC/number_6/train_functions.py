@@ -11,6 +11,7 @@ def readable(requested_file):
     del returned_file[1::2]
     return returned_file
 
+
 def transfer_save(requested_file, save_location):
     '''
     Берет отформатированный список, проходится по нему и отбирает важные данные, занося их постепенно в новый текстовый
@@ -27,12 +28,11 @@ def transfer_save(requested_file, save_location):
         vagon = temp[1]
         city = temp[4]
         date = temp[6]
-        text = "["+date+"]","- Поезд №",vagon,"из",city
-        text = str(text).replace("'","").replace(",","").replace("(","").replace(")","")
+        text = "[" + date + "]", "- Поезд №", vagon, "из", city
+        text = str(text).replace("'", "").replace(",", "").replace("(", "").replace(")", "")
         txtfile.write(text)
         txtfile.write("\n")
-        #print(f"[{date}] - Поезд # {vagon} из {city}")
-
+        # print(f"[{date}] - Поезд # {vagon} из {city}")
 
         c += 1
     return "Сохранено в файл", save_location

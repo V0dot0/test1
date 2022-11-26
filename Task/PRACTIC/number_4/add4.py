@@ -9,6 +9,7 @@ def read_file(requested_file: str):
     returned_file = list(set(content.read().splitlines()))
     return returned_file
 
+
 def save_file(returned_file: str, requested_file: str):
     '''
     Функция принимае название файла из которого мы возьмем данные и название файла в который запишем данные; сортирует

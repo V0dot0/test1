@@ -12,7 +12,8 @@ def record(currentRecord: int):
 
     new_text.seek(0)
     new_text.write(str(found))
-    return("текущий рекорд ",currentRecord, "максимальный рекорд ", found)
+    return ("текущий рекорд ", currentRecord, "максимальный рекорд ", found)
+
 
 def get_words():
     '''
@@ -20,7 +21,7 @@ def get_words():
     по одному слову; этот список является словарем игры; Возвращает словарь игры в виде списка.
     :return: Возвращает список слов
     '''
-    opened_file = open('Words.txt')
+    opened_file: TextIOWrapper = open('Words.txt')
     word_list = opened_file.read().splitlines()
     word_list = [i.lower() for i in word_list]
     return word_list
