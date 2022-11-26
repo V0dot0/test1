@@ -26,6 +26,11 @@ def convert_list():
 
 
 def get_name(name):
+    '''
+    Ищет по данному тексту совпадения, заносит их в список
+    :param name: текст для поиска
+    :return: список с совпадениями
+    '''
     list = convert_list()
     new_li = []; c = 0
     for word in list:
@@ -39,6 +44,11 @@ def get_name(name):
 
 
 def get_list(new_list):
+    '''
+    Оставляет первою строку, умножает количество на цену, помещает в список
+    :param new_list: список для счета
+    :return: новый умноженный список
+    '''
     c = 0; newer_li = []
     for words in new_list:
         split_list = new_list[c].split("|")
@@ -51,11 +61,16 @@ def get_list(new_list):
 
 
 def get_totals(newer_list):
+    '''
+    Функция, которая добавляет к сумме значение 100, если сумма меньше 500
+    :param newer_list: список для считывания
+    :return: список с измененными по условию значениями
+    '''
     c = 0; newest_li = []
     for words in newer_list:
         current_part = newer_list[c]
         current_id = current_part[0]; temp1 = current_part[1]
-        if temp1 < 200:
+        if temp1 < 500:
             temp1 += 100
         c += 1
         current_part = current_id, temp1
@@ -64,6 +79,7 @@ def get_totals(newer_list):
 
 def printlist(list_name: list):
     '''
+    Только для вывода списка
     :param list_name: список
     :return: выводит в консоль
     '''
