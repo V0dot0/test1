@@ -36,7 +36,7 @@ def file_conversion(requested_file: str):
         return broken
 
 
-def error_checking(requested_file):
+def error_checking(requested_file: str):
     '''
     Принимает название файла; проводит обнаружение ошибки; если находит, выводит текст с пояснением ошибки; если не
     находит ошибок, выводит итог работы функции file conversion(): (если файл соотвествует требованиям, возвращает
