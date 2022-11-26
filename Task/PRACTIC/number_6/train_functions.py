@@ -20,11 +20,11 @@ def transfer_save(requested_file, save_location):
     :param save_location: название файла, в которого сохранится текст
     :return: текстовое уведомление о сохранении
     '''
-    c = 0
+    counter = 0
     temp = []
     txtfile = open(save_location, mode='w+', encoding='utf-8')
     for word in requested_file:
-        temp = requested_file[c].split()
+        temp = requested_file[counter].split()
         vagon = temp[1]
         city = temp[4]
         date = temp[6]
@@ -34,5 +34,5 @@ def transfer_save(requested_file, save_location):
         txtfile.write("\n")
         # print(f"[{date}] - Поезд # {vagon} из {city}")
 
-        c += 1
+        counter += 1
     return "Сохранено в файл", save_location
