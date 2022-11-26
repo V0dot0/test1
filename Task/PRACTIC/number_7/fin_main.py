@@ -3,7 +3,7 @@ import fin_functions as fun
 #print(fun.books_cvs_extract())
 
 new_list = fun.get_name("Python")
-print(str(new_list).title())
+fun.printlist(new_list)
 
 newer_list = fun.get_list(new_list)
 print(newer_list)
