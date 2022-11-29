@@ -1,0 +1,5 @@
+# File content changed_train_log.txt
+
+Total train log: 
+[12:56:30] - Поезд № 365 из Сасово
+[13:04:22] - Поезд № 452 в Сочи
