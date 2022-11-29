@@ -32,7 +32,7 @@ def formatting_and_save_log(requested_file, returned_file):
         if len(content) == 1:
             res: list = content[0]
             initial_log: list = ['[', res[3], '] - Поезд № ', res[0], ' ',
-                                 res[1],' ', res[2]]
+                                 res[1], ' ', res[2]]
             final_log: str = ''.join(initial_log)
             changed_log.write(str(final_log))
             changed_log.write(str("\n"))
