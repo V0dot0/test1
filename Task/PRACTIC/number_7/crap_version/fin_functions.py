@@ -5,7 +5,7 @@ def csv_extract():
     Открывает файл books.csv и конвертирует его в читаемый для программы текст
     :return: текст без isbn|title|author|quantity|price
     '''
-    with open('books.csv', 'r', ) as file:
+    with open('../books.csv', 'r', ) as file:
         fixed_text = ""
         reader = csv.reader(file, delimiter='\t')
         for row in reader:

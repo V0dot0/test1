@@ -1,6 +1,8 @@
 import seven_functions as fun
-
-cvs_out = fun.csv_extract()
-#print (cvs_out)
-
-print(fun.search(cvs_out))
+#
+fun.csv_to_txt_service()
+#
+matches = fun.get_books("Python")
+print(matches)
+#
+print(fun.get_totals(matches))
