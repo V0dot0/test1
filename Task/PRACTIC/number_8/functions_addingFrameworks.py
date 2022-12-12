@@ -43,7 +43,7 @@ def sorting_list(requested_list):
     :param requested_list: словарь из unsorted_list_creation()
     '''
 
-    print("Начался перевод, по завершении программы будет изменен output.txt")
+    print("Начался перевод, по завершении программы будет изменен output.txt ")
     lst2 = requested_list
     lstD = dict(sorted(lst2.items()))
     lst3 = sorted(lstD, key=lstD.get, reverse=True)
