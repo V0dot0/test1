@@ -15,7 +15,7 @@ cогласный|consonant|1
 кушать|A meal.|1
 хороший|Good|1
 минута|a minute|1
-назад|ago|1
+назад|Back|1
 мы|we're|1
 находиться|stay|1
 неизбежный|inevitable|1
