@@ -6,6 +6,11 @@ translator = Translator(from_lang="ru", to_lang="en")
 morph = pymorphy2.MorphAnalyzer()
 
 def unsorted_list_creation():
+    '''
+    Убирает из списка все не нужное, и в итоге приводит все к словарю вида {'название': число, 'название': число,...}
+    без сортировки.
+    :return: словарь
+    '''
     lstx = []
     txt_open: io.TextIOWrapper = open("input.txt", mode='r', encoding='utf-8')
     bad_chars = [';','!', "*","?","1","2","3","4","5","6","7","8","9","0",",",":",".","-"]
@@ -33,6 +38,11 @@ def unsorted_list_creation():
 
 
 def sorting_list(requested_list):
+    '''
+    Сортирует список, нормализирует его, и переводит, потом заносит в output.txt
+    :param requested_list: словарь из unsorted_list_creation()
+    '''
+
     print("Начался перевод, по завершении программы будет изменен output.txt")
     lst2 = requested_list
     lstD = dict(sorted(lst2.items()))
