@@ -9,7 +9,7 @@ morph = pymorphy2.MorphAnalyzer()
 def unsorted_list_creation():
     '''
     Открывает файл input.txt, оставляет слова, приводит все к словарю вида {'название': число, 'название': число,...}
-    без сортировки.
+    без сортировки
     :return: словарь
     '''
     txt_open: TextIOWrapper = open('input.txt', mode='r+', encoding='utf-8')
