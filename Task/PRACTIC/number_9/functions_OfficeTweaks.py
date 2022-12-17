@@ -143,42 +143,44 @@ def four_deleter():
     test = open("test.txt", mode='w', encoding='utf-8');test = open("tempy.cvs", mode='w', encoding='utf-8')
     test = open("help.txt", mode='w', encoding='utf-8');test = open("temp2y.txt", mode='w', encoding='utf-8')
     test.close()
-    get_all_items = os.listdir(os.getcwd());
-    directory = os.getcwd()
-    print(get_all_items)
+    get_all_items = os.listdir(os.getcwd())
+    print("Текущие файлы из ",os.getcwd()," : ",get_all_items)
 
     print("1. Удалить все файлы начинающиеся на определенную подстроку\n\
 2. Удалить все файлы заканчивающиеся на определенную подстроку\n\
 3. Удалить все файлы содержащие определенную подстроку\n\
 4. Удалить все файлы по расширению")
-    inpud = int(input("Выберите номер действия. Ваш выбор: "))
 
+    inpud = int(input("Выберите номер действия. Ваш выбор: "))
     if inpud == 1:
         directory = os.getcwd()
         files_in_directory = os.listdir(directory)
-        pattern = input("Выберите подстроку начала: ")
-        pattern = "^" + pattern
+        patternOrigin = input("Выберите подстроку начала: ")
+        pattern = "^" + patternOrigin
         filtered_files = [file for file in files_in_directory if (re.search(pattern, file))]
         for file in filtered_files:
-            path_to_file = os.path.join(directory, file)
-            print(path_to_file)
-            os.remove(path_to_file)
-        # get_all_items = os.listdir(os.getcwd())
-        # print(get_all_items)
+            if file.startswith(patternOrigin):
+                path_to_file = os.path.join(directory, file)
+                print("Удалено: ",path_to_file)
+                os.remove(path_to_file)
+        get_all_items = os.listdir(os.getcwd())
+        print("Текущие файлы из ",os.getcwd()," : ",get_all_items)
 
     elif inpud == 2:
         directory = os.getcwd()
         files_in_directory = os.listdir(directory)
-        pattern = input("Выберите подстроку окончания: ")
-        pattern = pattern + ".\w+$"
+        patternOrigin = input("Выберите подстроку окончания: ")
+        pattern = patternOrigin + ".\w+$"
         filtered_files = [file for file in files_in_directory if (re.search(pattern, file))]
-        # print("filtered files",filtered_files)
         for file in filtered_files:
-            path_to_file = os.path.join(directory, file)
-            print(path_to_file)
-            os.remove(path_to_file)
-        # get_all_items = os.listdir(os.getcwd())
-        # print(get_all_items)
+            a = pathlib.Path(file).suffix
+            fileFix = file.replace(a,"")
+            if fileFix.endswith(patternOrigin):
+                path_to_file = os.path.join(directory, file)
+                print("Удалено: ",path_to_file)
+                os.remove(path_to_file)
+        get_all_items = os.listdir(os.getcwd())
+        print("Текущие файлы из ",os.getcwd()," : ",get_all_items)
 
     elif inpud == 3:
         directory = os.getcwd()
@@ -187,23 +189,22 @@ def four_deleter():
         filtered_files = [file for file in files_in_directory if (re.search(pattern, file))]
         for file in filtered_files:
             path_to_file = os.path.join(directory, file)
-            print(path_to_file)
+            print("Удалено: ",path_to_file)
             os.remove(path_to_file)
         get_all_items = os.listdir(os.getcwd())
-        print(get_all_items)
+        print("Текущие файлы из ",os.getcwd()," : ",get_all_items)
     elif inpud == 4:
         directory = os.getcwd()
         files_in_directory = os.listdir(directory)
         pattern = input("Выберите подстроку расширения(без точки): ")
         pattern = pattern + "$"
         filtered_files = [file for file in files_in_directory if (re.search(pattern, file))]
-        # print("filtered files",filtered_files)
         for file in filtered_files:
             path_to_file = os.path.join(directory, file)
-            print(path_to_file)
+            print("Удалено: ",path_to_file)
             os.remove(path_to_file)
         get_all_items = os.listdir(os.getcwd())
-        print(get_all_items)
+        print("Текущие файлы из ",os.getcwd()," : ",get_all_items)
     else:
         print("ВВЕДИТЕ ОТ 1 ДО 4")
         four_deleter()
