@@ -1,10 +1,10 @@
 нечто|Something.|7
 человек|persons|6
 я|.|5
+что|what|3
 думать|think|2
 уже|Your Business|2
 февраль|February,|2
-что|what|2
 cогласный|consonant|1
 автобус|Автобус|1
 апрель|April|1
@@ -28,5 +28,5 @@ cогласный|consonant|1
 скоро|soon|1
 судьба|Destiny|1
 так|so|1
+то|than|1
 тоже|the same|1
-чтоть|that|1

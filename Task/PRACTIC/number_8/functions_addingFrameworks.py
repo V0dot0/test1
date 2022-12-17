@@ -1,3 +1,4 @@
+import re
 import pymorphy2
 from translate import Translator
 
@@ -7,34 +8,23 @@ morph = pymorphy2.MorphAnalyzer()
 
 def unsorted_list_creation():
     '''
-    Убирает из списка все не нужное, и в итоге приводит все к словарю вида {'название': число, 'название': число,...}
+    Открывает файл input.txt, оставляет слова, приводит все к словарю вида {'название': число, 'название': число,...}
     без сортировки.
     :return: словарь
     '''
-    lstx = []
-    txt_open: io.TextIOWrapper = open("input.txt", mode='r', encoding='utf-8')
-    bad_chars = [';','!', "*","?","1","2","3","4","5","6","7","8","9","0",",",":",".","-"]
-    for word in txt_open:
-        word = word.replace("\n", "")
-        for i in bad_chars:
-            word = word.replace(i, '')
-        temp_word = word.split(' ')
-        lstx.append(temp_word)
-    ####
+    txt_open: TextIOWrapper = open('input.txt', mode='r+', encoding='utf-8')
+    content: str = txt_open.read()
+    content: str = content.lower()
+    good_chars_pattern: str = r"(?:\я|\w+[^(\W|\d)]+)"
+    good_words: list = re.findall(good_chars_pattern, content)
 
-    lstx2 = []
-    for i in lstx:
-        for words in i:
-            if len(words)!=0:
-                lstx2.append(words.lower())
-
-    lst2 = {}
-    for i in lstx2:
-        if i in lst2:
-            lst2[i] += 1
+    slovar_unsorted: dict = {}
+    for word in good_words:
+        if word in slovar_unsorted:
+            slovar_unsorted[word] += 1
         else:
-            lst2[i] = 1
-    return lst2
+            slovar_unsorted[word] = 1
+    return slovar_unsorted
 
 
 def sorting_list(requested_list):
@@ -44,13 +34,13 @@ def sorting_list(requested_list):
     '''
 
     print("Начался перевод, по завершении программы будет изменен output.txt ")
-    lst2 = requested_list
-    lstD = dict(sorted(lst2.items()))
-    lst3 = sorted(lstD, key=lstD.get, reverse=True)
+    slovar_unsorted = requested_list
+    alphabet_sorted: dict = dict(sorted(slovar_unsorted.items()))
+    sorted_by_most: list = sorted(alphabet_sorted, key=alphabet_sorted.get, reverse=True)
 
-    txt_write = open("output.txt", mode='w+', encoding='utf-8')
-    for sord in lst3:
-        for key, value in lstD.items():
+    txt_write: TextIOWrapper = open("output.txt", mode='w+', encoding='utf-8')
+    for sord in sorted_by_most:
+        for key, value in alphabet_sorted.items():
             if sord == key:
                  morph1 = morph.parse(sord)[0]
                  sord = morph1.normal_form
@@ -61,4 +51,4 @@ def sorting_list(requested_list):
                  txt_write.write("|")
                  txt_write.write(str(value))
                  txt_write.write('\n')
-
+    print("\nВыполено!!!!!!!!!!!!")
