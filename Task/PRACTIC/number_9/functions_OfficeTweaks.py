@@ -9,7 +9,7 @@ from PIL import Image
 
 
 #univercity быстрый доступ
-#os.chdir(r"C:\Users\Student\Desktop\python\testingGround")
+os.chdir(r"C:\Users\Student\Desktop\python\testingGround")
 #Для домашнего пк, быстрый доступ к тестам
 #os.chdir(r"C:\tmp\four2")
 #os.chdir(r"C:\tmp")
@@ -41,7 +41,7 @@ def one_pdf_doc():
     i = 0
     for word in get_all_items:
         if pathlib.Path(word).suffix == ".pdf":
-            i +=1
+            i += 1
             list_for_pdf.append(word)
             list_for_path.append(os.path.abspath(word))
             print(i,". ",word)
