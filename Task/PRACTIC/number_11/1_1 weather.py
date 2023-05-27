@@ -22,7 +22,7 @@ def requestLog(requestedFile, requestedData):
     content = open(requestedFile, "a", encoding='utf-8')
     content.write(Time())
 
-    cityPattern = r"(\"name\"\:\")([^\"}]*)"
+    cityPattern = r"(?:\"name\"\:\")([^\"}]*)"
     city = re.findall(cityPattern, requestedData)
     city = ''.join(city)
     content.write(f" Запрос погоды в городе: {city}")
