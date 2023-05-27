@@ -3,14 +3,12 @@ import ssl
 import urllib.request
 ssl._create_default_https_context= ssl._create_unverified_context
 
-
-url= "https://quke.ru/shop/smartfony/apple?page-size=72"
-response = urllib.request.urlopen(url).read().decode()
+response = urllib.request.urlopen("https://quke.ru/shop/smartfony/apple?page-size=72").read().decode()
 
 namePattern = r"(?:\d\"\,\s+\"name\"\:\s\")([^\"]*)"
-name = re.findall(namePattern, response)
-
 pricePattern = r"(?:\"price\"\:\s)([^\n]*)"
+
+name = re.findall(namePattern, response)
 price = re.findall(pricePattern, response)
 
 namePriceList = []
