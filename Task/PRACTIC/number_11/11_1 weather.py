@@ -15,7 +15,7 @@ inputCity = input("Input City: ")
 url= ("https://api.openweathermap.org/data/2.5/weather?q=" + inputCity
       + "&units=metric&lang=ru&appid=c341e34f9b7c327502cde34aa7817c5f")
 response= urllib.request.urlopen(url).read().decode()
-logFile = "11_logFile.txt"
+logFile = "11_1_logFile.txt"
 
 
 def requestLog(requestedFile, requestedData):
