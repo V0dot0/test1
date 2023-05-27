@@ -8,7 +8,7 @@ def test_time(fn):
         st = time.time()
         fn(*args)
         dt = time.time() - st
-        print(f"Время работы: {dt} сек")
+        print(f"\nВремя работы: {dt} сек")
     return wrapper
 
 def kmeans(Input, K, Max_iters):
