@@ -17,3 +17,7 @@ class Sphere:
 
     def getRadius(self):
         return self.radius
+
+    def getCentre(self):
+        center = 0
+        return self.center
