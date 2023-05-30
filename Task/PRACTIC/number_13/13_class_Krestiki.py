@@ -21,7 +21,7 @@ def game():
     turn = 'X'
     count = 0
 
-    for i in range(10):
+    for i in range(999):
 
         if count == 9:
             print("\nКонец\n")
@@ -33,13 +33,21 @@ def game():
                                   "4-5-6\n"
                                   "1-2-3\n ")
 
-        move = input()
-        print("\n")
+
+        while True:
+            try:
+                move = int(input('выбьор'))
+                break
+            except:
+                print("айаййайа")
+
+        while (int(move) > 9) or (int(move) < 1):
+            print("ай ай ай. Выберите от 1 до 9")
+            move = input()
 
         if bord[move] == ' ':
             bord[move] = turn
             count += 1
-
         else:
             print("Занято.\n Выберите другое место")
             continue
@@ -95,7 +103,7 @@ def gameAI():
     turn = 'X'
     count = 0
 
-    for i in range(10):
+    for i in range(999):
 
         if count == 9:
             print("\nКонец\n")
@@ -106,8 +114,14 @@ def gameAI():
                                   "7-8-9\n"
                                   "4-5-6\n"
                                   "1-2-3\n ")
+
+
+
         if turn == 'X':
             move = input()
+            while (int(move) > 9) or (int(move) < 1):
+                print("ай ай ай. Выберите от 1 до 9")
+                move = input()
         else:
             move = str(random.randint(1, 9))
         print("\n")
