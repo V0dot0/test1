@@ -120,10 +120,19 @@ def gameAI():
 
 
         if turn == 'X':
-            move = input()
+
+            while True:
+                try:
+                    move = int(input('Выберите цифру, пожалуйста'))
+                    break
+                except:
+                    print(" Это не цифра. ")
+
             while (int(move) > 9) or (int(move) < 1):
-                print("ай ай ай. Выберите от 1 до 9")
+                print("Выберите цифру от 1 до 9")
                 move = input()
+
+            move = str(move)
         else:
             move = str(random.randint(1, 9))
         print("\n")
