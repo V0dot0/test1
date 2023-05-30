@@ -28,22 +28,24 @@ def game():
             print("Ничья")
 
         printBord(bord)
+
         print("Ваш шаг," + turn + ".Выберите место\n"
                                   "7-8-9\n"
                                   "4-5-6\n"
                                   "1-2-3\n ")
 
-
         while True:
             try:
-                move = int(input('выбьор'))
+                move = int(input('Выберите цифру, пожалуйста'))
                 break
             except:
-                print("айаййайа")
+                print(" Это не цифра. ")
 
         while (int(move) > 9) or (int(move) < 1):
-            print("ай ай ай. Выберите от 1 до 9")
+            print("Выберите цифру от 1 до 9")
             move = input()
+
+        move = str(move)
 
         if bord[move] == ' ':
             bord[move] = turn
